@@ -1,0 +1,6 @@
+U:\Espace privé\trucs qui servent\AP\basch\morpion2.0\morpion\morpion\bin\Debug\morpion.exe.config
+U:\Espace privé\trucs qui servent\AP\basch\morpion2.0\morpion\morpion\bin\Debug\morpion.exe
+U:\Espace privé\trucs qui servent\AP\basch\morpion2.0\morpion\morpion\bin\Debug\morpion.pdb
+U:\Espace privé\trucs qui servent\AP\basch\morpion2.0\morpion\morpion\obj\Debug\morpion.csprojResolveAssemblyReference.cache
+U:\Espace privé\trucs qui servent\AP\basch\morpion2.0\morpion\morpion\obj\Debug\morpion.exe
+U:\Espace privé\trucs qui servent\AP\basch\morpion2.0\morpion\morpion\obj\Debug\morpion.pdb
