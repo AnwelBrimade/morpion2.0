@@ -14,7 +14,9 @@ namespace Morpion
             string[,] grilleString = {{ "1", "2", "3" },{ "1", "2", "3" },{ "1", "2", "3" }};
         public static void AfficherMorpion(int j, int k){
         	 int[,] grilleInt2 = new int[3, 3];
+        	 
             // Dessiner une grille
+            
             for (j = 0; j < grilleInt2.GetLength(0); j++){
                 Console.Write("\n|====|====|====|\n");
                 Console.Write("|");
@@ -29,28 +31,21 @@ namespace Morpion
                 	    	Console.Write(" -- ");}
                 	
                     Console.Write("|");}}}
-
-        // Fonction permettant de changer
-        // dans le tableau qu'elle est le 
-        // joueur qui à jouer
-        // Bien vérifier que le joueur ne sort
-        // pas du tableau et que la position
-        // n'est pas déjà jouée
-        	
-        public static bool AJouer(int j, int k, int joueur){
-return false;}
+            
+        public static bool AJouer(){
+        	return true;}
 
         // Fonction permettant de vérifier
-        // si un joueur à gagner
+        // si un joueur à gagner, réutilisé plus tard
         
         public static bool Gagner(int l, int c, int joueur){
-            	if((grille[l,0] +grille[l,1] +grille[l,2]==0)||(grille[l,0] +grille[l,1] +grille[l,2]==0)){
+            	if((grille[l,0] +grille[l,1] +grille[l,2]==0)||(grille[l,0] +grille[l,1] +grille[l,2]==3)){
             			return true;}
             	
-            	if((grille[0,c] +grille[1,c] +grille[2,c]==0)||(grille[0,c] +grille[1,c] +grille[2,c]==0)){
+            	if((grille[0,c] +grille[1,c] +grille[2,c]==0)||(grille[0,c] +grille[1,c] +grille[2,c]==3)){
             			return true;}
             
-            	if((grille[0,0] +grille[1,1] +grille[2,2]==0)||(grille[1,2] +grille[2,2] +grille[1,2]==0)||(grille[0,0] +grille[1,1] +grille[2,2]==3)||(grille[1,2] +grille[2,2] +grille[1,2]==3)){
+            	if((grille[0,0] +grille[1,1] +grille[2,2]==0)||(grille[0,2] +grille[1,1] +grille[2,0]==0)||(grille[0,0] +grille[1,1] +grille[2,2]==3)||(grille[0,2] +grille[1,1] +grille[2,0]==3)){
             			return true;}
             
             	else {return false;}}
@@ -105,35 +100,42 @@ return false;}
 							while ((c>3)||(c<0)){	
 								Console.SetCursorPosition(LigneDébut + 10, ColonneDébut + 8);
 								c = int.Parse(Console.ReadLine())- 1;}
+							
+							
+        // Fonction permettant de changer
+        // dans le tableau 
+        // Bien vérifier que le joueur ne sort
+        // pas du tableau et que la position
+        // n'est pas déjà jouée
+        	
+							if (AJouer()){
 							for (j=0; j < grille.GetLength(0); j++){
 		        					for (k=0; k < grille.GetLength(1); k++)
-										if ((j==l)&&(k==c)){
-		        							if  (joueur ==1){
-		        								if (grille[j,k] !=0 && grille[j,k] !=1 ){
+		        						
+										if ((j==l)&&(k==c)){//quand en traversant le tableau la valeur entrée concorde alors;
+		        							if  (joueur ==1){//qu'elle est le joueur qui à jouer
+		        								if (grille[j,k] !=0 && grille[j,k] !=1 ){//si le tableau n'as pas stocké de coups à l'emplacement souhaité, alors il stocke le coup joué puis remplace graphiquement par un rond
 		        									grille[j,k] =0;
-										            if (joueur==1)
-										            	joueur=joueur+1;
-										            else
-										            	joueur=joueur-1;}
-		        								else{
+		        									essais=essais+1;
+										            	joueur=joueur+1;//changer de joueur
+}
+		        								else{//si le joueur joue hor des clous alors il rejoue
 		        									joueur=1;
 		        									l=10;
 		        									c=10;}}
 		        							
-		        							if  (joueur ==2){
+		        							if  (joueur ==2){ //qu'elle est le joueur qui à jouer
 		        								if (grille[j,k] !=0 && grille[j,k] !=1 ){
 		        									grille[j,k] =1;
 		        									l=10;
 										            c=10;
-										            if (joueur==1)
-										            	joueur=joueur+1;
-										            else
-										            	joueur=joueur-1;}
+										            essais=essais+1;
+										            	joueur=joueur-1;}//changer de joueur
 		        								
-		        								else{
+		        								else{//si le joueur joue hor des clous alors il rejoue
 													joueur=2;
 													l=10;
-		        									c=10;}}}}
+													c=10;}}}}}
 											// Parcourir un tableau verifier valeur
 				            for (j = 0; j < grille.GetLength(0); j++)
 				            {
@@ -151,15 +153,19 @@ return false;}
 		        										goto found;
 		        									if(Gagner(0,0,2))
 		        										goto found;
-		        									essais=essais+1;
+		        									
 		        									
 		        									Console.ReadKey();}
+	        Console.Clear();
+	        Console.WriteLine("personne n'a gagné...");
+            Console.ReadKey();
             // Fin de la partie
-						found:
+            found:if (essais!=9)
 						{Console.Clear();
 							if (joueur==2)
 								Console.WriteLine(" vous avez gagné joueur 1!");
 							else
 								Console.WriteLine(" vous avez gagné joueur 2!");}
+            
 						Console.ReadKey();
 						}}}
