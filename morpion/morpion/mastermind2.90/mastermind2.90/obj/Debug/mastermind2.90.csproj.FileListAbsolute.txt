@@ -1,0 +1,6 @@
+U:\Espace privé\trucs qui servent\AP\basch\morpion2.0\morpion\morpion\mastermind2.90\mastermind2.90\obj\Debug\mastermind2.90.csprojResolveAssemblyReference.cache
+U:\Espace privé\trucs qui servent\AP\basch\morpion2.0\morpion\morpion\mastermind2.90\mastermind2.90\bin\Debug\mastermind2.90.exe.config
+U:\Espace privé\trucs qui servent\AP\basch\morpion2.0\morpion\morpion\mastermind2.90\mastermind2.90\bin\Debug\mastermind2.90.exe
+U:\Espace privé\trucs qui servent\AP\basch\morpion2.0\morpion\morpion\mastermind2.90\mastermind2.90\bin\Debug\mastermind2.90.pdb
+U:\Espace privé\trucs qui servent\AP\basch\morpion2.0\morpion\morpion\mastermind2.90\mastermind2.90\obj\Debug\mastermind2.90.exe
+U:\Espace privé\trucs qui servent\AP\basch\morpion2.0\morpion\morpion\mastermind2.90\mastermind2.90\obj\Debug\mastermind2.90.pdb
