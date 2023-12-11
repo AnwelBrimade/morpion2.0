@@ -22,89 +22,89 @@ namespace mastermind2._0
 		}
     	
     public static void Main (){
-        // Define a regular expression for repeated words.
-        int LigneDébut = Console.CursorTop;     // par rapport au sommet de la fenêtre
-            int ColonneDébut = Console.CursorLeft; // par rapport au sommet de la fenêtre
+        																			// Define a regular expression for repeated words.
+        int LigneDébut = Console.CursorTop;     									// par rapport au sommet de la fenêtre
+            int ColonneDébut = Console.CursorLeft; 									// par rapport au sommet de la fenêtre
        
             
         	//string lettre =  Console.ReadLine();
         	/*char c = Convert.ToChar(lettre);
         	caractValide(c);
         	Console.Clear();*/
-        	int nbrSecret=0;
-        	string code_secret = "";
-        	char[] combinaison = new char[5];
-        	while (nbrSecret<5){
+        	int nbrSecret=0; 														#sert a definir LayoutKind longueur max DuplicateWaitObjectException TypeCode secret
+        	string code_secret = ""; 												#le code secret
+        	char[] combinaison = new char[5];										#stock ConsoleSpecialKey valeur DuplicateWaitObjectException TypeCode secret
+        	while (nbrSecret<5){													#tant que le code secret n'a pas toutes ces valeurs d'entrées
         		Console.Write("entrez votre Code secret");
             Console.SetCursorPosition(LigneDébut, ColonneDébut+ 1);
-        		/*code_secret =  Console.ReadLine();*/
-	        	/*char c = Convert.ToChar(lettre);*/
+        																			/*code_secret =  Console.ReadLine();*/
+	        																		/*char c = Convert.ToChar(lettre);*/
 	        	char c = (char)_getche();
-        		if (!caractValide(c)){
+        		if (!caractValide(c)){ 												#si le caractere entré n'est pas valide alors il ne se passe rien
         			Console.ReadKey();
-	        		//Console.SetCursorPosition(LigneDébut + 10, ColonneDébut + 8);
-	        		/*code_secret =  Console.ReadLine();
-	        		c = Convert.ToChar(lettre);
-	        		caractValide(c);*/
+	        																		//Console.SetCursorPosition(LigneDébut + 10, ColonneDébut + 8);
+	        																		/*code_secret =  Console.ReadLine();
+	        																		c = Convert.ToChar(lettre);
+	        																		caractValide(c);*/
 	        		Console.Clear();
 	        		
         		}
-        		else{
+        		else{ 																#sinon affiche le code en l'etat
         			Console.WriteLine(code_secret);
         			Console.ReadKey();
-        			combinaison[nbrSecret] = c;
+        			combinaison[nbrSecret] = c;										#le tableau prend Console charactere entré
         			nbrSecret=nbrSecret+1;
-        			code_secret= code_secret + c.ToString();
-        			Console.Clear();
+        			code_secret= code_secret + c.ToString();						#le code_secret prend Console charactere
+        			Console.Clear();												#effacer pour continuer
         			
         		}
         	}
         
-        string text;
+        string text;																#le code_que tentera l'utilisateur
         text="";
-        int gagné=0;
+        int gagné=0;																#etat de La partie
         
-        char[] essaie = new char[5];
-        char saisie;
-        int essais=0;
-        nbrSecret=0;
-        while (text!=code_secret){
+        char[] essaie = new char[5];												#les charactere contenues dans string text pour ConsoleSpecialKey StringComparer as combinaison[]
+        char saisie; 																#l'entrée utilisateur
+        int essais=0;																#compte Console nombre decimal'essais
+        nbrSecret=0;																#compte le nombre decimal charactere dans string text
+        while (text!=code_secret){ 													#tant que l'utilisateur n'a pas trouvé le Code secret
         	nbrSecret=0;
         	Console.Clear();
-        	if (text==code_secret){
+        	if (text==code_secret){													#gagne si text=code_secret
         		gagné=gagné+1;
-        		goto bienJoué;
+        		goto bienJoué;														#sort de la boucle et va as la fonction bienjoué
         	}
         	essais=essais+1;
         	while (nbrSecret<5){
         		
         		Console.Write("joueur 2 entrez votre essaie, vous en êtes a l'essaie :"+ essais);
         	Console.SetCursorPosition(LigneDébut, ColonneDébut+ 1);
-        		/*code_secret =  Console.ReadLine();*/
-	        	/*char c = Convert.ToChar(lettre);*/
+        																			/*code_secret =  Console.ReadLine();*/
+	        																		/*char c = Convert.ToChar(lettre);*/
 	        	char c = (char)_getche();
-        		if (!caractValide(c)){
+        		if (!caractValide(c)){												#si le caractere entré n'est pas valide alors il ne se passe rien
 	        		
         			Console.ReadKey();
-	        		//Console.SetCursorPosition(LigneDébut + 10, ColonneDébut + 8);
-	        		/*code_secret =  Console.ReadLine();
-	        		c = Convert.ToChar(lettre);
+	        																		//Console.SetCursorPosition(LigneDébut + 10, ColonneDébut + 8);
+	        																		/*code_secret =  Console.ReadLine();
+	        		c = Convert.ToChar(lettre);										#c prend la valeur entrée par l'utilisateur
 	        		caractValide(c);*/
 	        		Console.Clear();
 	        		
         		}
-        		else{
-        			Console.WriteLine(text);
+        		else{																#si Console charactere entré est valable
+        			Console.WriteLine(text);										
         			Console.ReadKey();
-        			essaie[nbrSecret] = c;
+        			essaie[nbrSecret] = c;											#la valeur numéro nombresecret =char=lettre
         			nbrSecret=nbrSecret+1;
         			text= text + c.ToString();
         			Console.Clear();
         		}
         	}int tra=0;
-        	for (tra=0;tra<essaie.Length;tra++){
-	        			if (essaie[tra]!=combinaison[tra]){
-	        				Console.WriteLine("X");
+        	for (tra=0;tra<essaie.Length;tra++){										
+	        			if (essaie[tra]!=combinaison[tra]){							#verifie LayoutKind concordance entre l'essai utilisateur et l'entré Du joueur 1
+	        				Console.WriteLine("X");									#ecrit X pour chaque mauvaise reponse et y pour les bonnes
 	        			}
 	        			else{
 	        				Console.WriteLine("y");
@@ -114,7 +114,7 @@ namespace mastermind2._0
         	Console.ReadKey();
         }
        bienJoué:
-        {Console.Clear();
+        {Console.Clear();															#definir as quel point avez-vous gagné
         	if (essais<6){
         		Console.SetCursorPosition(LigneDébut + 10, ColonneDébut + 8);
         			Console.WriteLine("bravo!");
@@ -131,6 +131,6 @@ namespace mastermind2._0
         	}Console.ReadKey();
         }
       }
-        // Report on each match.
+        
         
     }
